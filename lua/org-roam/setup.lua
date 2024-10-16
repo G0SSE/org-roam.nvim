@@ -24,6 +24,7 @@ return function(roam)
         M.__define_commands()
         M.__define_keybindings()
         M.__modify_orgmode_plugin()
+        M.__setup_link_opener()
 
         -- Create the directories if they are missing
         local path = require("org-roam.core.utils.path")
@@ -89,5 +90,13 @@ return function(roam)
         end
     end
 
+    ---@private
+    function M.__setup_link_opener()
+        if not M.__setup_link_opener_done then
+            M.__setup_link_opener_done = true
+            local link_opener = require("org-roam.link_opener")
+            link_opener.setup(roam)
+        end
+    end
     return M
 end

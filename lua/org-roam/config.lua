@@ -76,6 +76,10 @@ local DEFAULT_CONFIG = {
         include_origin = true,
     },
 
+    --- link opener
+    link_opener = {
+        enabled = true,
+    },
     ---Settings associated with org-roam's database.
     ---@class org-roam.config.Database
     database = {
